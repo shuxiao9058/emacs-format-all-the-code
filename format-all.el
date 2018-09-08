@@ -479,6 +479,12 @@ Consult the existing formatters for examples of BODY."
   (:modes swift-mode swift3-mode)
   (:format (format-all-buffer-easy executable)))
 
+(define-format-all-formatter luaformatter
+  (:executable "luaformatter")
+  (:install (macos "luarocks install Formatter --lua-dir=/usr/local/opt/lua@5.1"))
+  (:modes lua-mode)
+  (:format (format-all-buffer-easy executable "-i")))
+
 (define-format-all-formatter yq
   (:executable "yq")
   (:install (macos "brew install yq"))
